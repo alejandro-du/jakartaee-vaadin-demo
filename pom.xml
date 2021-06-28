@@ -57,6 +57,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.apache.deltaspike.distribution</groupId>
+                <artifactId>distributions-bom</artifactId>
+                <version>1.9.4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -103,6 +110,26 @@
             <version>8.0.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-impl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-data-module-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-data-module-impl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 
         <!-- Added to provide logging output as Flow uses -->
         <!-- the unbound SLF4J no-operation (NOP) logger implementation -->
@@ -124,20 +151,10 @@
             <plugin>
                 <groupId>org.apache.tomee.maven</groupId>
                 <artifactId>tomee-maven-plugin</artifactId>
-                <version>7.1.1</version>
+                <version>8.0.7</version>
                 <configuration>
-                    <tomeeClassifier>webprofile</tomeeClassifier>
                     <context>ROOT</context>
-                    <synchronization>
-                        <extensions>
-                            <extension>.class</extension>
-                        </extensions>
-                    </synchronization>
-                    <reloadOnUpdate>true</reloadOnUpdate>
-                    <systemVariables>
-                        <openejb.system.apps>true</openejb.system.apps>
-                        <tomee.serialization.class.blacklist>-</tomee.serialization.class.blacklist>
-                    </systemVariables>
+                    <libs>mysql:mysql-connector-java:8.0.25</libs>
                 </configuration>
             </plugin>
 

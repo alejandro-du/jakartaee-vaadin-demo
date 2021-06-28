@@ -1,0 +1,8 @@
+<tomee>
+    <Resource id="mysqlResource" type="DataSource">
+        JdbcDriver com.mysql.jdbc.Driver
+        JdbcUrl jdbc:mysql://localhost/jakartaee
+        UserName root
+        Password password
+    </Resource>
+</tomee>

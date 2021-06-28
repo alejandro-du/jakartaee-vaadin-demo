@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+
+    <persistence-unit name="jakarataee-pu" transaction-type="RESOURCE_LOCAL">
+        <jta-data-source>mysqlResource</jta-data-source>
+        <class>com.example.app.User</class>
+    </persistence-unit>
+
+</persistence>
+
