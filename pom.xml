@@ -155,6 +155,18 @@
                 <configuration>
                     <context>ROOT</context>
                     <libs>mysql:mysql-connector-java:8.0.25</libs>
+                    <synchronization>
+                        <extensions>
+                            <!-- used for detecting code changes in Java classes -->
+                            <!-- if needed, add other extensions (like .properties)-->
+                            <extension>.class</extension>
+                        </extensions>
+                    </synchronization>
+                    <reloadOnUpdate>true</reloadOnUpdate>
+                    <systemVariables>
+                        <openejb.system.apps>true</openejb.system.apps>
+                        <tomee.serialization.class.blacklist>-</tomee.serialization.class.blacklist>
+                    </systemVariables>
                 </configuration>
             </plugin>
 
